@@ -12,7 +12,8 @@ BubbleBobble-like game created with 'SDL'.
 **`DOWNLOAD THE PROJECT AND START THE SOLUTION ON x86 PLATFORM. IT WON'T RUN ON x64`**
 
 ## General info
-This project is simple gamme where the player has to shoot falling bobbles matching the colour. **`Multiplayer support added`**.
+This project is simple gamme where the player has to shoot falling bobbles matching the colour.   
+**`Multiplayer support added`**.
 #### How to play
 **`THIS IS A DEMO MADE TO TEST THE CONTROLLER FUNCTIONALITIES WITH SDL, KEYBOARD WON'T WORK`**  
 The player can rotate the cannon loaded with the Booble using the directional buttons, and change its colour using RB and LB. After directing the cannon towards the target, the player can select the colour of the Bobble and shoot the targets using the A button. If the colour matches, the player scores points, whereas if it doesn’t, he loses points. 
