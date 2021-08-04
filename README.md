@@ -9,7 +9,7 @@ BubbleBobble-like game created with 'SDL'.
 
 
 ## Download & Setup  
-`**DOWNLOAD THE PROJECT AND START THE SOLUTION ON x86 PLATFORM. IT WON'T RUN ON x64**`
+**`DOWNLOAD THE PROJECT AND START THE SOLUTION ON x86 PLATFORM. IT WON'T RUN ON x64`**
 
 ## General info
 This project is simple gamme where the player has to shoot falling bobbles matching the colour. `**Multiplayer support added**`.
