@@ -8,7 +8,7 @@ BubbleBobble-like game created with 'SDL'.
 * [Technologies](#technologies)
 
 
-
+ <a name="download-&-setup"/>
 ## Download & Setup  
 **`DOWNLOAD THE PROJECT AND START THE SOLUTION ON x86 PLATFORM. IT WON'T RUN ON x64`**
 
