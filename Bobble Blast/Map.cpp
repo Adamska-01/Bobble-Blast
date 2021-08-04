@@ -2,7 +2,7 @@
 #include "TextureManager.h"
 #include "UsefullFunctions.h"
 #include "Input.h"
-//desf
+
 Map::Map(bool TwoPlayers)
 {
 	//Size of the tile sheet
