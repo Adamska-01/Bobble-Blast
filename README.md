@@ -8,6 +8,7 @@ BubbleBobble-like game created with 'SDL'.
 * [Technologies](#technologies)
 
 
+
 ## Download & Setup  
 **`DOWNLOAD THE PROJECT AND START THE SOLUTION ON x86 PLATFORM. IT WON'T RUN ON x64`**
 
