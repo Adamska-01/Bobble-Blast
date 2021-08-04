@@ -3,7 +3,7 @@ BubbleBobble-like game created with 'SDL'.
 
 
 # Table of contents
-* [Download & Setup](#download-and-setup)
+* [Download & Setup](#download-&-setup)
 * [General info](#general-info)
 * [Technologies](#technologies)
 
