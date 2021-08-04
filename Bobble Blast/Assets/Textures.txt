@@ -1,0 +1,7 @@
+Assets/IdleBobbles.png
+Assets/BlowBobbles.png
+Assets/Cannon.png
+Assets/Arrow.png
+Assets/MapTiles.png
+Assets/Backgrounds/Stars.png
+Assets/Menu.png
