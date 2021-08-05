@@ -2,6 +2,7 @@
 #include "Cannon.h"
 #include "Map.h"
 #include "AudioManager.h"
+#include "FrameTimer.h"
 
 
 class Application
@@ -10,16 +11,18 @@ private:
 	bool Running{ false };
 	bool gameover{ false };
 	bool TwoPlayers{ false };
-	
+
 	//Player
 	std::vector<Cannon*> cannon{ nullptr };
-	
+
 	Map* map{ nullptr };
 
 	Background* MenuBackground;
-	
+
 	UIText* FPSText;
 	UIText* GameOverText;
+
+	FrameTimer ft;
 
 public:
 	Application();
@@ -32,7 +35,7 @@ private:
 	void Quit();
 	void Destroy();
 	SDL_Texture* EndGameFadeTexture();
-	
+
 public:
 	//Getters
 	inline bool IsRunning() { return Running; }
