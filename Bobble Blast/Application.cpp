@@ -29,7 +29,7 @@ Application::Application()
 	//Audio Music
 	AudioManager::GetInstance()->LoadAudio(0, "Assets/Audio/AIr Room.wav", MUSIC, 15);
 	AudioManager::GetInstance()->LoadAudio(1, "Assets/Audio/Blazer Rail 2.wav", MUSIC, 15);
-	
+
 	//Player
 	cannon.clear();
 
@@ -58,7 +58,7 @@ void Application::Update()
 	{
 		Message.ShowMessageBox(messageType::CONTROLLER_WARNING);
 	}
-	
+
 	//-------------------MAIN MENU----------------------
 	MenuUpdate();
 
@@ -67,9 +67,9 @@ void Application::Update()
 	map = new Map(TwoPlayers);
 
 	//Game instructions
-	if(Running)
+	if (Running)
 		Message.ShowMessageBox(messageType::INSTRUCTIONS);
-	
+
 	//Load map
 	if (!map->IsMultiplayer())
 		map->LoadMap("Assets/Map/SinglePlayer/Map.txt");
@@ -90,28 +90,23 @@ void Application::Update()
 		map->LoadUI("Assets/Map/SinglePlayer/UIText.txt");
 	}
 
-	//---------------GAME UPDATE------------------
-	Uint32 countedFrames = 0;
-	float counterDelay = 0;
-	const float frameDelay = 1000.0f / TARGET_FPS;
+	//---------------GAME UPDATE------------------ 
 	while (Running)
 	{
 		if (Renderer::GetInstance()->GetRenderer())
 		{
-			//timer and quit()
-			Timer::GetInstance()->Reset();
-			Timer::GetInstance()->Start();
-			
+			ft.StartClock();
+
 			if (!Input::GetInstance()->Update())
 				Quit();
-			
+
 			if (!gameover)
 			{
 				//Updates
-				for(auto it : cannon)
-					it->Update(Timer::GetInstance()->deltaTime());
-				
-				map->Update(Timer::GetInstance()->deltaTime());
+				for (auto it : cannon)
+					it->Update(FrameTimer::DeltaTime());
+
+				map->Update(FrameTimer::DeltaTime());
 
 				FPSText->SetWidthAndHeightByText();
 				FPSText->Update(100);
@@ -122,7 +117,7 @@ void Application::Update()
 					if (map->GetSpawner()[i]->GetStats()->GetLives() <= 0)
 					{
 						map->GetSpawner()[i]->RemoveTimers();
-						
+
 						cannon[i]->SetGameover(true);
 					}
 				}
@@ -144,7 +139,7 @@ void Application::Update()
 						AudioManager::GetInstance()->PlaySFX(4, 0, 0);
 					}
 				}
-				
+
 
 				//Collisions (Player's bobble) with wall and falling bobbles
 				int index = 0;
@@ -178,7 +173,7 @@ void Application::Update()
 			FPSText->Draw(One);
 
 			//End game
-			if(gameover)
+			if (gameover)
 			{
 				//Create text
 				std::stringstream message;
@@ -200,7 +195,7 @@ void Application::Update()
 					{
 						message << "\t\t\t\t\t\tIt's a draw!" << "\n\n Press B to exit the game...";
 						Mess = message.str();
-					}	
+					}
 				}
 				else
 				{
@@ -217,55 +212,33 @@ void Application::Update()
 				if (Input::GetInstance()->ButtonPressed(Players::PLAYER1, SDL_CONTROLLER_BUTTON_B))
 					Quit();
 			}
-			
+
 			Renderer::GetInstance()->ClearAndPresent();
 
-			Timer::GetInstance()->End();
-			float time = Timer::GetInstance()->Tick();
-			
-			//Delay
-			if (frameDelay > time)
-			{
-				float Delay =  frameDelay - time;
-
-				counterDelay += Delay;
-				Renderer::GetInstance()->Delay(Delay);		
-			}
-
-			//FPS
-			++countedFrames;
-			counterDelay += time;
-			if (counterDelay > 1000.0f)
-			{
-				counterDelay = 0;
-				Timer::GetInstance()->SetDeltaTime((1.0f / countedFrames));
-				FPSText->SetText(std::to_string(countedFrames - 1));
-				countedFrames = 0;
-			}
+			//FPS and delay
+			ft.EndClock();
+			ft.DelayByFrameTime();
+			FPSText->SetText(std::to_string(FrameTimer::Frames()));
 		}
 	}
 }
 
 void Application::MenuUpdate()
 {
-	Uint32 countedFrames = 0;
-	float counterDelay = 0;
-	const float frameDelay = 1000.0f / TARGET_FPS;
-
 	AudioManager::GetInstance()->PlayMusicTrack(0, -1);
 
 	MenuBackground = new Background(texturesID::BACKGROUND, Vector2D(0, 720), true);
-	
+
 	bool IsMenu = true;
+	double frameTime = (double)1000 / 60;
 	while (IsMenu)
 	{
-		Timer::GetInstance()->Reset();
-		Timer::GetInstance()->Start();
+		ft.StartClock();
 
 		FPSText->SetWidthAndHeightByText();
 		FPSText->Update(100);
 
-		MenuBackground->Update(Timer::GetInstance()->deltaTime());
+		MenuBackground->Update(FrameTimer::DeltaTime());
 		MenuBackground->Draw();
 		TextureManager::GetInstance()->Draw(texturesID::MENU, SDL_Rect{ 0,0,SCREENWIDTH, SCREENHEIGHT }, One);
 		FPSText->Draw(One);
@@ -288,29 +261,10 @@ void Application::MenuUpdate()
 			IsMenu = false;
 		}
 
+		ft.EndClock();
+		ft.DelayByFrameTime();
 
-		Timer::GetInstance()->End();
-		float time = Timer::GetInstance()->Tick();
-
-		//Delay
-		if (frameDelay > time)
-		{
-			float Delay = frameDelay - time;
-
-			counterDelay += Delay;
-			Renderer::GetInstance()->Delay(Delay);
-		}
-
-		//FPS
-		++countedFrames;
-		counterDelay += time;
-		if (counterDelay > 1000.0f)
-		{
-			counterDelay = 0;
-			Timer::GetInstance()->SetDeltaTime((1.0f / countedFrames));
-			FPSText->SetText(std::to_string(countedFrames - 1));
-			countedFrames = 0;
-		}
+		FPSText->SetText(std::to_string(FrameTimer::Frames()));
 	}
 }
 
@@ -352,7 +306,7 @@ void Application::Destroy()
 		MenuBackground = nullptr;
 	}
 
-	if (cannon.size()>0)
+	if (cannon.size() > 0)
 	{
 		for (int i = 0; i < cannon.size(); i++)
 		{
