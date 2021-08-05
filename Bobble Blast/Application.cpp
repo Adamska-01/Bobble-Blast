@@ -2,7 +2,6 @@
 #include "Renderer.h"
 #include "TextureManager.h"
 #include "Input.h"
-#include "Timer.h"
 #include "MessageHandler.h"
 #if _DEBUG
 #include "MemoryManagement.h"
