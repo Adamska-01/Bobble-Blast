@@ -153,6 +153,7 @@
     <ClCompile Include="BobbleSpawner.cpp" />
     <ClCompile Include="Cannon.cpp" />
     <ClCompile Include="CollisionHandler.cpp" />
+    <ClCompile Include="FrameTimer.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -160,7 +161,6 @@
     <ClCompile Include="MessageHandler.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UIText.cpp" />
     <ClCompile Include="Vector2D.cpp" />
@@ -177,6 +177,7 @@
     <ClInclude Include="CircleCollider2D.h" />
     <ClInclude Include="CollisionHandler.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="FrameTimer.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="IObject.h" />
@@ -186,7 +187,6 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="Timer.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UIText.h" />
