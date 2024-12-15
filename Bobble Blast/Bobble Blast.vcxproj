@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -145,53 +145,69 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="AudioManager.cpp" />
-    <ClCompile Include="Background.cpp" />
-    <ClCompile Include="Bobble.cpp" />
-    <ClCompile Include="BobbleSpawner.cpp" />
-    <ClCompile Include="Cannon.cpp" />
-    <ClCompile Include="CollisionHandler.cpp" />
-    <ClCompile Include="FrameTimer.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="MessageHandler.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="UIManager.cpp" />
-    <ClCompile Include="UIText.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="src\Components\Collisions\Circle.cpp" />
+    <ClCompile Include="src\Components\Generic\SpriteAnimationProperties.cpp" />
+    <ClCompile Include="src\Components\Sprite.cpp" />
+    <ClCompile Include="src\Components\SpriteAnimator.cpp" />
+    <ClCompile Include="src\Game\Application.cpp" />
+    <ClCompile Include="src\Core\SDL\AudioManager.cpp" />
+    <ClCompile Include="src\Game\Background.cpp" />
+    <ClCompile Include="src\Game\Bobble.cpp" />
+    <ClCompile Include="src\Game\BobbleSpawner.cpp" />
+    <ClCompile Include="src\Game\Cannon.cpp" />
+    <ClCompile Include="src\Components\Collisions\CollisionHandler.cpp" />
+    <ClCompile Include="src\Core\SDL\MessageBox\MessageBoxConfig.cpp" />
+    <ClCompile Include="src\Game\Stats.cpp" />
+    <ClCompile Include="src\Utility\FrameTimer.cpp" />
+    <ClCompile Include="src\Core\ComponentBucket.cpp" />
+    <ClCompile Include="src\Core\SDL\Input.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Game\Map.cpp" />
+    <ClCompile Include="src\Core\SDL\MessageBox\MessageHandler.cpp" />
+    <ClCompile Include="src\Core\SDL\Renderer.cpp" />
+    <ClCompile Include="src\Core\GameObject.cpp" />
+    <ClCompile Include="src\Components\Transform.cpp" />
+    <ClCompile Include="src\Math\Vector2.cpp" />
+    <ClCompile Include="src\Core\SDL\TextureManager.cpp" />
+    <ClCompile Include="src\Core\SDL\UIManager.cpp" />
+    <ClCompile Include="src\Core\SDL\UI\UIText.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Animation.h" />
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="AudioManager.h" />
-    <ClInclude Include="Background.h" />
-    <ClInclude Include="Bobble.h" />
-    <ClInclude Include="BobbleSpawner.h" />
-    <ClInclude Include="BoxCollider2D.h" />
-    <ClInclude Include="Cannon.h" />
-    <ClInclude Include="CircleCollider2D.h" />
-    <ClInclude Include="CollisionHandler.h" />
-    <ClInclude Include="Debug.h" />
-    <ClInclude Include="FrameTimer.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="IObject.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="MemoryManagement.h" />
-    <ClInclude Include="MessageHandler.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Stats.h" />
-    <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="Transform.h" />
-    <ClInclude Include="UIManager.h" />
-    <ClInclude Include="UIText.h" />
-    <ClInclude Include="UsefullFunctions.h" />
-    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="include\Components\Collisions\Circle.h" />
+    <ClInclude Include="include\Components\Sprite.h" />
+    <ClInclude Include="include\Components\SpriteAnimator.h" />
+    <ClInclude Include="include\Game\Application.h" />
+    <ClInclude Include="include\Core\SDL\AudioManager.h" />
+    <ClInclude Include="include\Game\Background.h" />
+    <ClInclude Include="include\Game\Bobble.h" />
+    <ClInclude Include="include\Game\BobbleSpawner.h" />
+    <ClInclude Include="include\Components\Collisions\BoxCollider2D.h" />
+    <ClInclude Include="include\Game\Cannon.h" />
+    <ClInclude Include="include\Components\Collisions\CircleCollider2D.h" />
+    <ClInclude Include="include\Components\Collisions\CollisionHandler.h" />
+    <ClInclude Include="include\Core\SDL\MessageBox\MessageHandler.h" />
+    <ClInclude Include="include\Debug\Debug.h" />
+    <ClInclude Include="include\Utility\FrameTimer.h" />
+    <ClInclude Include="include\Components\GameComponent.h" />
+    <ClInclude Include="include\Constants\ScreenConstants.h" />
+    <ClInclude Include="include\Core\ComponentBucket.h" />
+    <ClInclude Include="include\Constants\ComponentBucketConstants.h" />
+    <ClInclude Include="include\Core\GameObject.h" />
+    <ClInclude Include="include\Core\IObject.h" />
+    <ClInclude Include="include\Components\Transform.h" />
+    <ClInclude Include="include\Math\MathConstants.h" />
+    <ClInclude Include="include\Math\Vector2.h" />
+    <ClInclude Include="include\Core\SDL\Input.h" />
+    <ClInclude Include="include\Game\Map.h" />
+    <ClInclude Include="include\Debug\MemoryManagement.h" />
+    <ClInclude Include="include\Core\SDL\Renderer.h" />
+    <ClInclude Include="include\Core\SDL\MessageBox\MessageBoxConfig.h" />
+    <ClInclude Include="include\Components\Generic\SpriteAnimationProperties.h" />
+    <ClInclude Include="include\Game\Stats.h" />
+    <ClInclude Include="include\Core\SDL\TextureManager.h" />
+    <ClInclude Include="include\Core\SDL\UIManager.h" />
+    <ClInclude Include="include\Core\SDL\UI\UIText.h" />
+    <ClInclude Include="include\Utility\UsefullFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
