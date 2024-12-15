@@ -1,5 +1,5 @@
 #include "../../../include/Core/SDL/Renderer.h"
-#include "../../../include/Debug/Debug.h"
+#include "../../../include/Debugging/Debug.h"
 #include "../../../include/Math/Vector2.h"
 #include "../../include/Core/SDL/UIManager.h"
 

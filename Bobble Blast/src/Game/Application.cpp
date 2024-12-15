@@ -8,7 +8,7 @@
 #include "../../include/Core/SDL/TextureManager.h"
 #include "../../include/Core/SDL/UI/UIText.h"
 #include "../../include/Core/SDL/UIManager.h"
-#include "../../include/Debug/MemoryManagement.h"
+#include "../../include/Debugging/MemoryManagement.h"
 #include "../../include/Game/Application.h"
 #include "../../include/Game/Background.h"
 #include "../../include/Game/Cannon.h"

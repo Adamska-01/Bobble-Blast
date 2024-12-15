@@ -1,4 +1,4 @@
-#include "../../../include/Debug/Debug.h"
+#include "../../../include/Debugging/Debug.h"
 #include "../../include/Core/SDL/AudioManager.h"
 
 

@@ -1,6 +1,6 @@
 #include "../../include/Constants/ScreenConstants.h"
 #include "../../include/Core/SDL/Renderer.h"
-#include "../../include/Debug/Debug.h"
+#include "../../include/Debugging/Debug.h"
 #include <SDL.h>
 
 
